@@ -1,7 +1,5 @@
 async function getLeetProblem(tp, url) {
 
-    console.log(url)
-
     let titleSlug = extractProblemSlug(url);
 
     let headersList = {
@@ -67,7 +65,7 @@ async function getLeetProblem(tp, url) {
             __typename
             }
         }`,
-        variables: { "titleSlug": "two-sum" }
+        variables: { "titleSlug": titleSlug }
     }
 
     let bodyContent = JSON.stringify(gqlBody);
@@ -80,7 +78,7 @@ async function getLeetProblem(tp, url) {
     });
 
     // console.log(response);
-    return response
+    return JSON.parse(response);
 }
 
 
