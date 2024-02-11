@@ -22,7 +22,7 @@ Completed: false
 
 ## Problem
 
-<% question.content %>
+<% tp.obsidian.htmlToMarkdown(question.content) %>
 
 <%*
 question.hints.forEach(item => {
