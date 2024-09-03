@@ -1,10 +1,9 @@
 ---
 <%* 
 let url = await tp.system.clipboard();
-let problem = await tp.user.getLeetProblem(tp, url);
-let question = problem.data.question;
+let question = await tp.user.getLeetcodeProblem(tp, url, download_imgs=true, img_folder="assets/leetcode_imgs");
 
-console.log(question);
+// console.log(question);
 
 tp.file.rename(question.questionId + ". " + question.title);
 
@@ -22,7 +21,7 @@ Completed: false
 
 ## Problem
 
-<% tp.obsidian.htmlToMarkdown(question.content) %>
+<% question.content %>
 
 <%*
 question.hints.forEach(item => {
