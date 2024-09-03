@@ -1,7 +1,9 @@
 ---
 <%* 
 let url = await tp.system.clipboard();
-let question = await tp.user.getLeetcodeProblem(tp, url, download_imgs=true, img_folder="assets/leetcode_imgs");
+// let question = await tp.user.getLeetcodeProblem(tp, url, download_imgs=true, img_folder="assets/leetcode_imgs");
+// or
+let question = await tp.user.getLeetcodeProblem(tp, url, download_imgs=false);
 
 // console.log(question);
 
